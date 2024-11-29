@@ -1,10 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="278px" height="234px" viewBox="0 0 278 234" enable-background="new 0 0 278 234" xml:space="preserve">  <image id="image0" width="278" height="234" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARYAAADqAQAAAABPEVc0AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
-AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAd2KE6QAAAAHdElN
-RQfoCx0GLTGWGat7AAAANUlEQVRo3u3KsQ0AAAgDoP5/s4k9wdUBZrKnieM4juM4juM4juM4juM4
-juM4juM4juM4zoNTojTdFugY0VUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjQtMTEtMjlUMDY6NDU6
-NDkrMDA6MDAMOPzHAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI0LTExLTI5VDA2OjQ1OjQ5KzAwOjAw
-fWVEewAAAABJRU5ErkJggg==" />
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1024.000000pt" height="1024.000000pt" viewBox="0 0 1024.000000 1024.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M4840 8989 c-677 -58 -1358 -306 -1940 -707 -335 -231 -670 -550
+-914 -871 -84 -110 -206 -285 -206 -295 0 -2 -31 -55 -69 -118 -114 -187 -231
+-441 -304 -658 -96 -284 -139 -469 -180 -762 -30 -218 -32 -704 -4 -923 55
+-431 127 -704 284 -1075 232 -551 630 -1072 1118 -1465 249 -201 426 -316 700
+-455 246 -125 330 -160 560 -238 402 -136 753 -193 1196 -192 359 0 643 32
+944 106 539 134 997 352 1453 690 316 236 670 611 901 956 48 72 171 275 171
+283 0 7 -194 109 -860 455 -124 64 -282 147 -351 183 l-125 66 -39 -77 c-58
+-113 -201 -325 -289 -427 -279 -323 -662 -579 -1061 -710 -479 -156 -1012
+-150 -1485 18 -573 203 -1063 639 -1328 1182 -279 572 -338 1220 -163 1788 66
+212 156 414 255 567 13 19 40 62 62 95 33 53 152 204 187 239 6 7 37 41 67 76
+186 213 562 460 885 580 239 89 426 129 738 156 l67 6 0 769 0 769 -87 -1
+c-49 -1 -131 -5 -183 -10z"/>
+<path d="M3906 4801 c-8 -12 74 -271 128 -408 51 -126 94 -199 169 -288 70
+-81 496 -499 513 -503 11 -3 14 19 14 115 -1 318 -42 524 -138 683 -122 201
+-293 318 -569 389 -92 23 -109 25 -117 12z"/>
+</g>
 </svg>
