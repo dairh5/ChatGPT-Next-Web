@@ -618,7 +618,17 @@ export function MaskPage() {
                       onClick={() => setEditingMaskId(m.id)}
                     />
                   )}
-                 
+                 {!m.builtin && (
+                    <IconButton
+                      icon={<DeleteIcon />}
+                      text={Locale.Mask.Item.Delete}
+                      onClick={async () => {
+                        if (await showConfirm(Locale.Mask.Item.DeleteConfirm)) {
+                          maskStore.delete(m.id);
+                        }
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             ))}
