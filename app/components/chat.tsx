@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
