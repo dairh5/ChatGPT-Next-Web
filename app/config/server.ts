@@ -76,8 +76,8 @@ declare global {
       XAI_API_KEY?: string;
 
       // chatglm only
-      CHATGLM_URL?: string;
-      CHATGLM_API_KEY?: string;
+      CHATGLM_URL?: "https://api.deepseek.com/";
+      CHATGLM_API_KEY?: "sk-353e4613e63b40e3a4cf56933dbe2cf7";
 
       // custom template for preprocessing user input
       DEFAULT_INPUT_TEMPLATE?: string;
