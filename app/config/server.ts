@@ -9,7 +9,7 @@ declare global {
       OPENAI_API_KEY?: "sk-353e4613e63b40e3a4cf56933dbe2cf7";
       CODE?: string;
 
-      BASE_URL?: "https://api.deepseek.com/";
+      BASE_URL?: string;
       OPENAI_ORG_ID?: string; // openai only
 
       VERCEL?: string;
@@ -76,7 +76,7 @@ declare global {
       XAI_API_KEY?: string;
 
       // chatglm only
-      CHATGLM_URL?: "https://api.deepseek.com/";
+      CHATGLM_URL?: string;
       CHATGLM_API_KEY?: "sk-353e4613e63b40e3a4cf56933dbe2cf7";
 
       // custom template for preprocessing user input
