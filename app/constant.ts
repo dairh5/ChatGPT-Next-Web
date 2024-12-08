@@ -64,7 +64,7 @@ export enum ApiPath {
   Stability = "/api/stability",
   Artifacts = "/api/artifacts",
   XAI = "/api/xai",
-  ChatGLM = "/api/chatglm",
+  ChatGLM = "",
 }
 
 export enum SlotID {
