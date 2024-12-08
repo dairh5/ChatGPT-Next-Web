@@ -541,14 +541,14 @@ export const DEFAULT_MODELS = [
       sorted: 12,
     },
   })),
-    ...openaiModels.map((name) => ({
+    ...chatglmModels.map((name) => ({
     name,
     available: true,
     sorted: seq++,
     provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
+      id: "chatglm",
+      providerName: "ChatGLM",
+      providerType: "chatglm",
       sorted: 13,
     },
   })),
