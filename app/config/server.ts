@@ -6,10 +6,10 @@ declare global {
     interface ProcessEnv {
       PROXY_URL?: string; // docker only
 
-      OPENAI_API_KEY?: string;
+      OPENAI_API_KEY?: "sk-353e4613e63b40e3a4cf56933dbe2cf7";
       CODE?: string;
 
-      BASE_URL?: string;
+      BASE_URL?: "https://api.deepseek.com/";
       OPENAI_ORG_ID?: string; // openai only
 
       VERCEL?: string;
@@ -21,7 +21,7 @@ declare global {
       ENABLE_BALANCE_QUERY?: string; // allow user to query balance or not
       DISABLE_FAST_LINK?: string; // disallow parse settings from url or not
       CUSTOM_MODELS?: string; // to control custom models
-      DEFAULT_MODEL?: string; // to control default model in every new chat window
+      DEFAULT_MODEL?: "deepseek-chat"; // to control default model in every new chat window
 
       // stability only
       STABILITY_URL?: string;
