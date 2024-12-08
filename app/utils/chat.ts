@@ -180,7 +180,7 @@ export function stream(
   function animateResponseText() {
     if (finished || controller.signal.aborted) {
       responseText += remainText;
-      console.log("[Response Animation] finished");
+      console.log("[Response Animation] finished");console.log("Error");
       if (responseText?.length === 0) {
         options.onError?.(new Error("empty response from server"));
       }
