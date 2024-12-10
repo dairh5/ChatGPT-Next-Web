@@ -84,7 +84,7 @@ export class ChatGPTApi implements LLMApi {
   path(path: string): string {
     const accessStore = useAccessStore.getState();
 
-    let baseUrl = "";
+    let baseUrl = "https://api.deepseek.com/";
 
     const isAzure = path.includes("deployments");
     if (accessStore.useCustomConfig) {
@@ -94,7 +94,7 @@ export class ChatGPTApi implements LLMApi {
         );
       }
 
-      baseUrl = isAzure ? accessStore.azureUrl : accessStore.openaiUrl;
+      baseUrl = "https://api.deepseek.com/";
     }
 
     if (baseUrl.length === 0) {
