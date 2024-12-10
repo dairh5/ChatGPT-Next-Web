@@ -716,6 +716,7 @@ export function Settings() {
     </ListItem>
   );
 
+  //是否使用自定义接口名称
   const useCustomConfigComponent = // Conditionally render the following ListItem based on clientConfig.isApp
     !clientConfig?.isApp && ( // only show if isApp is false
       <ListItem
@@ -745,7 +746,8 @@ export function Settings() {
         <input
           aria-label={Locale.Settings.Access.OpenAI.Endpoint.Title}
           type="text"
-          value={accessStore.deepseekUrl}
+          value={accessStore.deepseekUrl} //自定义接口地址
+          //value="https://api.deepseek.com/"
           placeholder={OPENAI_BASE_URL}
           onChange={(e) =>
             accessStore.update(
@@ -761,10 +763,13 @@ export function Settings() {
         <PasswordInput
           aria={Locale.Settings.ShowPassword}
           aria-label={Locale.Settings.Access.OpenAI.ApiKey.Title}
+          //value={accessStore.deepseekApiKey}  //自定义apikeysk-34d8ee8cab044f61b46ab7924ff9bcd4
           value={accessStore.openaiApiKey}
           type="text"
           placeholder={Locale.Settings.Access.OpenAI.ApiKey.Placeholder}
           onChange={(e) => {
+            console.log("修改apikey");
+            console.log(e.currentTarget.value);
             accessStore.update(
               (access) => (access.openaiApiKey = e.currentTarget.value),
             );
@@ -1771,9 +1776,11 @@ export function Settings() {
           <ListItem
             title={Locale.Settings.Access.CustomModel.Title}
             subTitle={Locale.Settings.Access.CustomModel.SubTitle}
+            vertical={true}
           >
             <input
               aria-label={Locale.Settings.Access.CustomModel.Title}
+              style={{ width: "100%", maxWidth: "unset", textAlign: "left" }}
               type="text"
               value={config.customModels}
               placeholder="model1,model2,model3"
