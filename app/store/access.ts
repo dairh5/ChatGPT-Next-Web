@@ -4,6 +4,7 @@ import {
   StoreKey,
   ApiPath,
   OPENAI_BASE_URL,
+  DEEPSEEK_BASE_URL,
   ANTHROPIC_BASE_URL,
   GEMINI_BASE_URL,
   BAIDU_BASE_URL,
@@ -29,6 +30,8 @@ const isApp = getClientConfig()?.buildMode === "export";
 
 const DEFAULT_OPENAI_URL = isApp ? OPENAI_BASE_URL : ApiPath.OpenAI;
 
+const DEFAULT_DEEPSEEK_URL = isApp ? DEEPSEEK_BASE_URL : ApiPath.OpenAI;
+
 const DEFAULT_GOOGLE_URL = isApp ? GEMINI_BASE_URL : ApiPath.Google;
 
 const DEFAULT_ANTHROPIC_URL = isApp ? ANTHROPIC_BASE_URL : ApiPath.Anthropic;
@@ -53,13 +56,15 @@ const DEFAULT_CHATGLM_URL = isApp ? CHATGLM_BASE_URL : ApiPath.ChatGLM;
 
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",
-  useCustomConfig: false,
+  useCustomConfig: true,
 
   provider: ServiceProvider.OpenAI,
 
+  deepseekUrl: DEFAULT_DEEPSEEK_URL,
+  deepseekApiKey: "sk-34d8ee8cab044f61b46ab7924ff9bcd4",
   // openai
   openaiUrl: DEFAULT_OPENAI_URL,
-  openaiApiKey: "",
+  openaiApiKey: "sk-34d8ee8cab044f61b46ab7924ff9bcd4",
 
   // azure
   azureUrl: "",
@@ -122,8 +127,8 @@ const DEFAULT_ACCESS_STATE = {
   hideBalanceQuery: false,
   disableGPT4: false,
   disableFastLink: false,
-  customModels: "",
-  defaultModel: "",
+  customModels: "deepseek-chat",
+  defaultModel: "deepseek-chat",
 
   // tts config
   edgeTTSVoiceName: "zh-CN-YunxiNeural",
