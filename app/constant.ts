@@ -11,8 +11,11 @@ export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
 export const STABILITY_BASE_URL = "https://api.stability.ai";
 
+
 export const OPENAI_BASE_URL = "https://api.deepseek.com/";
 export const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
+
+export const DEEPSEEK_BASE_URL = "https://api.deepseek.com/"
 
 export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
@@ -52,7 +55,9 @@ export enum Path {
 export enum ApiPath {
   Cors = "",
   Azure = "/api/azure",
-  OpenAI = "/api/openai",
+  //OpenAI = "",
+  OpenAI = "",
+  Deepseek = "api/deepseek",
   Anthropic = "/api/anthropic",
   Google = "/api/google",
   Baidu = "/api/baidu",
@@ -64,7 +69,7 @@ export enum ApiPath {
   Stability = "/api/stability",
   Artifacts = "/api/artifacts",
   XAI = "/api/xai",
-  ChatGLM = "",
+  ChatGLM = "/api/chatglm",
 }
 
 export enum SlotID {
@@ -225,14 +230,19 @@ export const Iflytek = {
   ChatPath: "v1/chat/completions",
 };
 
+export const Deepseek = {
+  ExampleEndpoint: DEEPSEEK_BASE_URL,
+  ChatPath: "v1/chat/completions",
+};
+
 export const XAI = {
   ExampleEndpoint: XAI_BASE_URL,
   ChatPath: "v1/chat/completions",
 };
 
 export const ChatGLM = {
-  ExampleEndpoint: OPENAI_BASE_URL,
-  ChatPath: "v1/chat/completions",
+  ExampleEndpoint: CHATGLM_BASE_URL,
+  ChatPath: "api/paas/v4/chat/completions",
 };
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
@@ -293,27 +303,30 @@ export const DEFAULT_TTS_VOICES = [
 
 const openaiModels = [
   "gpt-3.5-turbo",
-  "gpt-3.5-turbo-1106",
-  "gpt-3.5-turbo-0125",
+  // "gpt-3.5-turbo-1106",
+  // "gpt-3.5-turbo-0125",
   "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
-  "gpt-4-turbo",
-  "gpt-4-turbo-preview",
-  "gpt-4o",
-  "gpt-4o-2024-05-13",
-  "gpt-4o-2024-08-06",
-  "gpt-4o-2024-11-20",
-  "chatgpt-4o-latest",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
+  // "gpt-4-turbo",
+  // "gpt-4-turbo-preview",
+  // "gpt-4o",
+  // "gpt-4o-2024-05-13",
+  // "gpt-4o-2024-08-06",
+  // "gpt-4o-2024-11-20",
+  // "chatgpt-4o-latest",
   "gpt-4o-mini",
-  "gpt-4o-mini-2024-07-18",
-  "gpt-4-vision-preview",
-  "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
-  "dall-e-3",
-  "o1-mini",
-  "o1-preview",
+  // "gpt-4o-mini-2024-07-18",
+  // "gpt-4-vision-preview",
+  // "gpt-4-turbo-2024-04-09",
+  // "gpt-4-1106-preview",
+  // "dall-e-3",
+  // "o1-mini",
+  // "o1-preview",
+];
+const deepSeekModels = [
+  "deepseek-chat",
 ];
 
 const googleModels = [
@@ -405,154 +418,153 @@ const chatglmModels = [
   "glm-4-long",
   "glm-4-flashx",
   "glm-4-flash",
-  "deepseek-chat",
 ];
 
 let seq = 1000; // 内置的模型序号生成器从1000开始
 export const DEFAULT_MODELS = [
-  ...openaiModels.map((name) => ({
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++, // Global sequence sort(index)
+  //   provider: {
+  //     id: "openai",
+  //     providerName: "OpenAI",
+  //     providerType: "openai",
+  //     sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
+  //   },
+  // })),
+  ...deepSeekModels.map((name) => ({
     name,
     available: true,
     sorted: seq++, // Global sequence sort(index)
     provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
+      id: "deepseek",
+      providerName: "deepseek",
+      providerType: "seepsekk-chat",
       sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...openaiModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
-      sorted: 2,
-    },
-  })),
-  ...googleModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "google",
-      providerName: "Google",
-      providerType: "google",
-      sorted: 3,
-    },
-  })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-      sorted: 4,
-    },
-  })),
-  ...baiduModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "baidu",
-      providerName: "Baidu",
-      providerType: "baidu",
-      sorted: 5,
-    },
-  })),
-  ...bytedanceModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "bytedance",
-      providerName: "ByteDance",
-      providerType: "bytedance",
-      sorted: 6,
-    },
-  })),
-  ...alibabaModes.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "alibaba",
-      providerName: "Alibaba",
-      providerType: "alibaba",
-      sorted: 7,
-    },
-  })),
-  ...tencentModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "tencent",
-      providerName: "Tencent",
-      providerType: "tencent",
-      sorted: 8,
-    },
-  })),
-  ...moonshotModes.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "moonshot",
-      providerName: "Moonshot",
-      providerType: "moonshot",
-      sorted: 9,
-    },
-  })),
-  ...iflytekModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "iflytek",
-      providerName: "Iflytek",
-      providerType: "iflytek",
-      sorted: 10,
-    },
-  })),
-  ...xAIModes.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "xai",
-      providerName: "XAI",
-      providerType: "xai",
-      sorted: 11,
-    },
-  })),
-  ...chatglmModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "chatglm",
-      providerName: "ChatGLM",
-      providerType: "chatglm",
-      sorted: 12,
-    },
-  })),
-    ...chatglmModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "chatglm",
-      providerName: "ChatGLM",
-      providerType: "chatglm",
-      sorted: 13,
-    },
-  })),
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "azure",
+  //     providerName: "Azure",
+  //     providerType: "azure",
+  //     sorted: 2,
+  //   },
+  // })),
+  // ...googleModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "google",
+  //     providerName: "Google",
+  //     providerType: "google",
+  //     sorted: 3,
+  //   },
+  // })),
+  // ...anthropicModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "Anthropic",
+  //     providerType: "anthropic",
+  //     sorted: 4,
+  //   },
+  // })),
+  // ...baiduModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "baidu",
+  //     providerName: "Baidu",
+  //     providerType: "baidu",
+  //     sorted: 5,
+  //   },
+  // })),
+  // ...bytedanceModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "bytedance",
+  //     providerName: "ByteDance",
+  //     providerType: "bytedance",
+  //     sorted: 6,
+  //   },
+  // })),
+  // ...alibabaModes.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "alibaba",
+  //     providerName: "Alibaba",
+  //     providerType: "alibaba",
+  //     sorted: 7,
+  //   },
+  // })),
+  // ...tencentModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "tencent",
+  //     providerName: "Tencent",
+  //     providerType: "tencent",
+  //     sorted: 8,
+  //   },
+  // })),
+  // ...moonshotModes.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "moonshot",
+  //     providerName: "Moonshot",
+  //     providerType: "moonshot",
+  //     sorted: 9,
+  //   },
+  // })),
+  // ...iflytekModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "iflytek",
+  //     providerName: "Iflytek",
+  //     providerType: "iflytek",
+  //     sorted: 10,
+  //   },
+  // })),
+  // ...xAIModes.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "xai",
+  //     providerName: "XAI",
+  //     providerType: "xai",
+  //     sorted: 11,
+  //   },
+  // })),
+  // ...chatglmModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "chatglm",
+  //     providerName: "ChatGLM",
+  //     providerType: "chatglm",
+  //     sorted: 12,
+  //   },
+  // })),
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
