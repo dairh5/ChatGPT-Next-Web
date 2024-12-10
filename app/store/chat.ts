@@ -412,7 +412,8 @@ export const useChatStore = createPersistStore(
         });
 
         const api: ClientApi = getClientApi(modelConfig.providerName);
-        // make request
+        // make request  发送请求
+        console.log("发送网络请求");
         api.llm.chat({
           messages: sendMessages,
           config: { ...modelConfig, stream: true },

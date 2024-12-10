@@ -56,12 +56,13 @@ const DEFAULT_CHATGLM_URL = isApp ? CHATGLM_BASE_URL : ApiPath.ChatGLM;
 
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",
-  useCustomConfig: true,
+  useCustomConfig: true, //是否使用自定义接口
 
   provider: ServiceProvider.OpenAI,
 
   deepseekUrl: DEFAULT_DEEPSEEK_URL,
   deepseekApiKey: "sk-34d8ee8cab044f61b46ab7924ff9bcd4",
+
   // openai
   openaiUrl: DEFAULT_OPENAI_URL,
   openaiApiKey: "sk-34d8ee8cab044f61b46ab7924ff9bcd4",

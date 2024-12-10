@@ -231,13 +231,25 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="你的AI物理老师"
-        subTitle="Your own AI teacher."
+        title="NextChat"
+        subTitle="Build your own AI assistant."
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
       >
         <div className={styles["sidebar-header-bar"]}>
-         
+          <IconButton
+            icon={<MaskIcon />}
+            text={shouldNarrow ? undefined : Locale.Mask.Name}
+            className={styles["sidebar-bar-button"]}
+            onClick={() => {
+              if (config.dontShowMaskSplashScreen !== true) {
+                navigate(Path.NewChat, { state: { fromHome: true } });
+              } else {
+                navigate(Path.Masks, { state: { fromHome: true } });
+              }
+            }}
+            shadow
+          />
           <IconButton
             icon={<DiscoveryIcon />}
             text={shouldNarrow ? undefined : Locale.Discovery.Name}
@@ -294,7 +306,15 @@ export function SideBar(props: { className?: string }) {
                 />
               </Link>
             </div>
-            
+            <div className={styles["sidebar-action"]}>
+              <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
+                <IconButton
+                  aria={Locale.Export.MessageFromChatGPT}
+                  icon={<GithubIcon />}
+                  shadow
+                />
+              </a>
+            </div>
           </>
         }
         secondaryAction={

@@ -5,14 +5,16 @@ import { cloudflareAIGatewayUrl } from "../utils/cloudflare";
 import { getModelProvider, isModelAvailableInServer } from "../utils/model";
 
 const serverConfig = getServerSideConfig();
-
+console.log("开始处理请求头");
 export async function requestOpenai(req: NextRequest) {
+  console.log("修改header的值");
   const controller = new AbortController();
 
   const isAzure = req.nextUrl.pathname.includes("azure/deployments");
 
   var authValue,
     authHeaderName = "";
+
   if (isAzure) {
     authValue =
       req.headers

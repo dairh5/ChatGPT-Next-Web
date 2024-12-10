@@ -114,14 +114,18 @@ export function SideBar(props: { className?: string }) {
               onClick={() => navigate(Path.Home)}
             />
           }
-          //logo={<SDIcon width={38} height={"100%"} />}//
+          logo={<SDIcon width={38} height={"100%"} />}
         ></SideBarHeader>
       )}
       <SideBarBody>
         <SdPanel />
       </SideBarBody>
       <SideBarTail
-        
+        primaryAction={
+          <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
+            <IconButton icon={<GithubIcon />} shadow />
+          </a>
+        }
         secondaryAction={
           <IconButton
             text={Locale.SdPanel.Submit}

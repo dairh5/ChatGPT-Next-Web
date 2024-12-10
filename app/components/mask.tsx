@@ -618,7 +618,7 @@ export function MaskPage() {
                       onClick={() => setEditingMaskId(m.id)}
                     />
                   )}
-                 {!m.builtin && (
+                  {!m.builtin && (
                     <IconButton
                       icon={<DeleteIcon />}
                       text={Locale.Mask.Item.Delete}
