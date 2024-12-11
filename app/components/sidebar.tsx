@@ -237,7 +237,7 @@ export function SideBar(props: { className?: string }) {
         shouldNarrow={shouldNarrow}
       >
         <div className={styles["sidebar-header-bar"]}>
-         /* <IconButton
+          {/* <IconButton
             icon={<MaskIcon />}
             text={shouldNarrow ? undefined : Locale.Mask.Name}
             className={styles["sidebar-bar-button"]}
@@ -248,7 +248,7 @@ export function SideBar(props: { className?: string }) {
                 navigate(Path.Masks, { state: { fromHome: true } });
               }
             }}
-            shadow*/
+            shadow*/}
           />
           <IconButton
             icon={<DiscoveryIcon />}
@@ -306,7 +306,7 @@ export function SideBar(props: { className?: string }) {
                 />
               </Link>
             </div>
-            /*<div className={styles["sidebar-action"]}>
+            { /*<div className={styles["sidebar-action"]}>
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 <IconButton
                   aria={Locale.Export.MessageFromChatGPT}
@@ -314,7 +314,7 @@ export function SideBar(props: { className?: string }) {
                   shadow
                 />
               </a>
-            </div>*/
+            </div>*/}
           </>
         }
         secondaryAction={
