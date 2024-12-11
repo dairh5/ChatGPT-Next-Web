@@ -1035,7 +1035,7 @@ function _Chat() {
 
   // only search prompts when user input is short
   const SEARCH_TEXT_LIMIT = 30;
-  const [dai, setDai] = useState("（1）");
+  const [dai, setDai] = useState("你的名字叫BEN，请记住");
   const onInput = (text: string) => {
     const daironghua = dai + text;
     setUserInput(daironghua);
