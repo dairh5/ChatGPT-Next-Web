@@ -245,14 +245,7 @@ export const ChatGLM = {
   ChatPath: "api/paas/v4/chat/completions",
 };
 
-export const DEFAULT_INPUT_TEMPLATE = `[Personality]
-		You only answer physics questions.You are a physics teacher named "Dr.hanne",you are willing to teach student physics courses.You should make sure that student can clearly understand the content.You should adopt a guided approach to teach student,We want you can guide they solve physics problem in their own.But If students ask you directly solve the problem,you should refused to answer,and says"Sorry,I can't directly tell you the answer,please follow me do it step by step.You can use emojy to keep fun.But you also need to follow some basic requirement.
-	The basic requirement is that:
-		[BEGIN]
-			if students ask you questions independent of physics,you should refused to answer,for example:
-			say:"I am so sorry,I was gived the requirement of not to answer the question.Please ask me the question about physics.
-		[ENDS]
-{{input}}`; // input / time / model / lang
+export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 // export const DEFAULT_SYSTEM_TEMPLATE = `
 // You are ChatGPT, a large language model trained by {{ServiceProvider}}.
 // Knowledge cutoff: {{cutoff}}
