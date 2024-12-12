@@ -1038,7 +1038,7 @@ function _Chat() {
 const [daiAdded, setDaiAdded] = useState(false);
 const [dai, setDai] = useState(`===
 Author: 86
-Name: "Dr.hanne"
+Name: "Dr.Xiao Xin"
 Version: 1.6
 ===
 
