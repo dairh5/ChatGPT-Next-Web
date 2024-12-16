@@ -1189,6 +1189,7 @@ const onInput = (text: string) => {
 
   const doSubmit = (userInput: string) => {
     if (userInput.trim() === "" && isEmpty(attachImages)) return;
+	   let daisubmitContent = dai + userInput;
     const matchCommand = chatCommands.match(userInput);
     if (matchCommand.matched) {
       setUserInput("");
@@ -1198,7 +1199,7 @@ const onInput = (text: string) => {
     }
     setIsLoading(true);
     chatStore
-      .onUserInput(userInput, attachImages)
+      .onUserInput(daisubmitContent, attachImages)
       .then(() => setIsLoading(false));
     setAttachImages([]);
     chatStore.setLastInput(userInput);
