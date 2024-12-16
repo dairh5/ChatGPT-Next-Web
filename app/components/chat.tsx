@@ -1459,7 +1459,13 @@ const onInput = (text: string) => {
               },
             ]
           : [],
-      );
+      ).map((message) => {
+      // 移除消息中的 dai 内容
+      if (message.content.startsWith(dai)) {
+        message.content = message.content.slice(dai.length);
+      }
+      return message;
+    });
   }, [
     config.sendPreviewBubble,
     context,
