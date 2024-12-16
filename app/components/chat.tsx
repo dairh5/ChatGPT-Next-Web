@@ -1016,7 +1016,7 @@ function _Chat() {
   );
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(measure, [userInput]);
+  useEffect(measure, [daiUserInput]);
 
   // chat commands shortcuts
   const chatCommands = useChatCommand({
