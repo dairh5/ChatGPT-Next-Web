@@ -1460,8 +1460,8 @@ const onInput = (text: string) => {
             ]
           : [],
       ).map((message) => {
-      // 移除消息中的 dai 内容
-      if (message.content.startsWith(dai)) {
+      // 确保 message.content 是 string 类型
+      if (typeof message.content === 'string' && message.content.startsWith(dai)) {
         message.content = message.content.slice(dai.length);
       }
       return message;
