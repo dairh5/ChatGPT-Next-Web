@@ -1016,7 +1016,7 @@ function _Chat() {
   );
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
- 
+ useEffect(measure, [userInput]);
   // chat commands shortcuts
   const chatCommands = useChatCommand({
     new: () => chatStore.newSession(),
@@ -1169,7 +1169,7 @@ const onInput = (text: string) => {
     setDaiAdded(true);
   }
   setUserInput(text);
-  useEffect(measure, [daiUserInput]);
+ 
 
     const n = text.trim().length;
 
