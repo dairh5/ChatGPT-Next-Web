@@ -1169,7 +1169,7 @@ const onInput = (text: string) => {
     daiUserInput = dai + text;
     setDaiAdded(true);
   }
-  setUserInput(daiUserInput);
+  setUserInput(text);
     const n = text.trim().length;
 
     // clear search results
